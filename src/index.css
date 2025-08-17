@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* 
+@theme {
+    --color-primary: #A53DFF;
+    --font-display: "Satoshi", sans-serif;
+    --text-20xl: 100rem;
+    --breakpoint-tablet: 768px;
+    --animate-changeColor: changeColorAnimation 1s infinite;
+}
+
+@keyframes changeColorAnimation {
+    0% {
+        color: red;
+    }
+    50% {
+        color: blue;
+        transform: scale(2);
+    }
+    100% {
+        color: green;
+    }
+} */
+
+/* @layer components{
+    .subscribe{
+    @apply
+
+    }
+} */
