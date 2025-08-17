@@ -17,32 +17,32 @@ import { useState } from "react";
 
 
 // for TO DO LIST
-export default function App() {
-   const [isDarkmode, setIsDarkmode] = useState(false);
-  const toggleDarkMode = ()=>{
-    setIsDarkmode(!isDarkmode);
-    document.body.classList.toggle("black", isDarkmode);
+// export default function App() {
+//    const [isDarkmode, setIsDarkmode] = useState(false);
+//   const toggleDarkMode = ()=>{
+//     setIsDarkmode(!isDarkmode);
+//     document.body.classList.toggle("black", isDarkmode);
 
-  }
-  return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className={`min-h-screen w-full max-w-[400px] flex flex-col justify-start items-center bg-gray-600 border-2 p-4 ${isDarkmode ? "bg-gray-900 text-black" : "bg-gray-600 text-black"}`} >
+//   }
+//   return (
+//     <div className="flex items-center justify-center min-h-screen">
+//       <div className={`min-h-screen w-full max-w-[400px] flex flex-col justify-start items-center bg-gray-600 border-2 p-4 ${isDarkmode ? "bg-gray-900 text-black" : "bg-gray-600 text-black"}`} >
         
-        <Input />
-           <button
-          className={`p-2 rounded mt-4 transition-colors duration-300 ${
-            isDarkmode ? "bg-blue-300 text-black" : "bg-gray-500 text-white"
-          }`}
-          onClick={toggleDarkMode}
-        >
-          {isDarkmode ? "Blue" : "Gray"}
-        </button>
+//         <Input />
+//            <button
+//           className={`p-2 rounded mt-4 transition-colors duration-300 ${
+//             isDarkmode ? "bg-blue-300 text-black" : "bg-gray-500 text-white"
+//           }`}
+//           onClick={toggleDarkMode}
+//         >
+//           {isDarkmode ? "Blue" : "Gray"}
+//         </button>
 
 
-      </div>
-    </div>
-  );
-}
+//       </div>
+//     </div>
+//   );
+// }
 
 
 
@@ -125,10 +125,25 @@ export default function App() {
 //   return (
 //     <div>
 //       {/* <Useref/> */}
-//      < <Content/>>
+//      
 //     </div>
 //   )
 // }
+
+
+
+// UseContext 
+import React from 'react'
+import Content from "./components/UseContext/Content";
+
+export default function App() {
+  return (
+    <>
+      <Content/>
+     
+    </>
+  )
+}
 
     
   

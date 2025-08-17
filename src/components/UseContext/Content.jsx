@@ -1,19 +1,19 @@
-import React from 'react'
-import { createContext } from 'react'
-import Content1 from './Content1'
-import {ThemeContext } from './Content.jsx'
+import React from "react";
+import Content2 from "./Content2.jsx";
+import { ThemeContext } from "../ThemContext/ThemeContext.jsx"; // ✅ Correct path
 
-export const NameContext = createContext();
-const name=["sagar","Sumit "];
+// ✅ Create NameContext
+export const NameContext = React.createContext();
 
-export default function Content() {     
-    return (
-    <>
-      <NameContext.Provider value={name}>
-        <ThemeContext.Provider value={{theme:"dark"}}>
-        <Content1/>
+export default function Content() {
+  return (
+    <div>
+      {/* ✅ Use Provider with value prop */}
+      <NameContext.Provider value={"sumit"}>
+        <ThemeContext.Provider value={"dark"}>
+          <Content2 />
         </ThemeContext.Provider>
       </NameContext.Provider>
-    </>
-  )
+    </div>
+  );
 }

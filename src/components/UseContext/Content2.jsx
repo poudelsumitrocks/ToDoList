@@ -1,17 +1,14 @@
-import React from 'react'
-import { createContext } from 'react'
-import { NameContext } from './Content'
-import { ThemeContext } from './Content'
+import React from "react";
+import { NameContext } from "./Content.jsx";
+import { ThemeContext } from "../ThemContext/ThemeContext.jsx"; // ✅ Correct path
+
 export default function Content2() {
-    const names = React.useContext(NameContext);
-    const theme = React.useContext(ThemeContext);
-    
+  const name = React.useContext(NameContext);
+  const theme = React.useContext(ThemeContext);
 
   return (
-    <>
-    <div className={`${theme=='dark'?"bg-black text-white":"bg-white text-black "}`}>
-     ChildThere , i am getting  
+    <div className={`${theme === "dark" ? "bg-black text-white" : "bg-white text-black"}`}>
+      ChildThere, I am getting {name}
     </div>
-    </>
-  )
+  );
 }
