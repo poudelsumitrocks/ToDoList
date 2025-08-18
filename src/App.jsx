@@ -132,15 +132,16 @@ import { useState } from "react";
 
 
 
-// UseContext 
+// UseContext and Tic-Tac-Toe
 import React from 'react'
 import Content from "./components/UseContext/Content";
+import TicTacToe from "./components/Tic-Tac-Toe/TicTacToe";
 
 export default function App() {
   return (
     <>
-      <Content/>
-     
+      {/* <Content/> */}
+     <TicTacToe/>
     </>
   )
 }
