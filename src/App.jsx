@@ -133,20 +133,35 @@ import { useState } from "react";
 
 
 // UseContext and Tic-Tac-Toe
-import React from 'react'
-import Content from "./components/UseContext/Content";
-import TicTacToe from "./components/Tic-Tac-Toe/TicTacToe";
+// import React from 'react'
+// import Content from "./components/UseContext/Content";
+// import TicTacToe from "./components/Tic-Tac-Toe/TicTacToe";
+
+// export default function App() {
+//   return (
+//     <>
+//       {/* <Content/> */}
+//      <TicTacToe/>
+//     </>
+//   )
+// }
+
+   import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router";
+import About from "./components/Router/About";
+import Home from "./components/Router/Home";
 
 export default function App() {
   return (
-    <>
-      {/* <Content/> */}
-     <TicTacToe/>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-    
   
 
 
