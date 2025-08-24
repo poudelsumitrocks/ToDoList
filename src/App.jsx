@@ -2,7 +2,7 @@ import { FaBell } from "react-icons/fa";
 import Lottie from "lottie-react";
 import animationData1 from "./animations/animationData1.json";
 import MyButton from "./components/MyButton";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import Child from "./components/Child";
@@ -146,23 +146,77 @@ import { useState } from "react";
 //   )
 // }
 
-   import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router";
-import About from "./components/Router/About";
-import Home from "./components/Router/Home";
+// import React from 'react';
+// import { BrowserRouter, Routes, Route } from "react-router";
+// import About from "./components/Router/About";
+// import Home from "./components/Router/Home";
+// import Contact from "./components/Router/Contact";
+// import Product from "./components/Router/Product";
+// import ProductDetails from "./components/Router/ProductDetails";
+// import Header from "./components/Router/Header";
 
-export default function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
+// export default function App() {
+//   return (
+//     <BrowserRouter>
+//       <Header /> 
+//       <Routes>
+//         <Route path="/" element={<Home/>} />
+//         <Route path="/about" element={<About/>} />
+//         <Route path="/contact" element={<Contact/>} />
+//         <Route path="/product" element={<Product/>} />
+//         <Route path="/product" element={<Product/>} />
+//         <Route path="/product/:id" element={<ProductDetails/>} />
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// }
 
   
 
 
+
+// Practice of routes
+// import React from 'react'
+// import { BrowserRouter, Route, Routes } from "react-router";
+// import Home from "./components/Practice/Home";
+// import About from "./components/Practice/About";
+// import Contact from "./components/Practice/Contact";
+// import Product from "./components/Practice/Product";
+// import ProductDetails from "./pages/ProductDetails";
+// import Headers from "./components/Practice/Headers";
+// import Search from "./pages/Search";
+// import Footers from "./components/Practice/Footers";
+// import SearchResults from "./pages/SearchResults";
+
+// export default function App() {
+//   return (
+//     <BrowserRouter>
+//       <Headers/>
+//       <Routes>
+//         <Route path="/home" element={<Home/>}/>
+//         <Route path="/about" element={<About/>}/>
+//         <Route path="/contact" element={<Contact/>}/>
+//         <Route path="/product" element={<Product/>}/>
+//         <Route path="/product/:id" element={<ProductDetails/>}/>
+//         <Route path="/" element={<Search/>}/>
+//         <Route path="/search" element={<SearchResults/>}/>
+//       </Routes>
+//       <Footers/>
+//     </BrowserRouter>
+//   )
+// }
+
+
+
+// // Charts import
+import React from 'react';
+import BarChart from './Charts/BarChart'; // correct relative path
+
+export default function App() {
+  return (
+    <div className="h-screen flex justify-center items-center">
+      <BarChart />
+    </div>
+  );
+}
 

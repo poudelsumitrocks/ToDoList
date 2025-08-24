@@ -1,6 +1,6 @@
 import React from "react";
 import Content2 from "./Content2.jsx";
-import { ThemeContext } from "../ThemContext/ThemeContext.jsx"; // ✅ Correct path
+import { ThemeContext } from "../ThemContext/ThemeContext.jsx"; 
 
 // ✅ Create NameContext
 export const NameContext = React.createContext();

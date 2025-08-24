@@ -1,12 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router';
+// import React from 'react'
 
-export default function Home() {
-  return (
-    <div className='h-screen flex flex-col justify-center items-center'>
-      <Link to="/about">
-        <button className='bg-blue-500 p-2 '>About</button>
-      </Link> 
-    </div>
-  );
-}
+// export default function Home() {
+//   return (
+//     <div>
+//       <h1>Welcome to home page</h1>
+//     </div>
+//   )
+// }
