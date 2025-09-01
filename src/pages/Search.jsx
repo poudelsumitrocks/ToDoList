@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import { GrApps } from "react-icons/gr";
 import { LuFlaskConical } from "react-icons/lu";
 import { FaArrowRight, FaPlus, FaSearch } from "react-icons/fa";
@@ -24,9 +24,11 @@ export default function Search() {
     }
   };
   const handleSearch = () => {
-
     navigate(`/search?query=${type}`);
   };
+  const handleBoard = ()=>{
+    navigate(`/dashboard`)
+  }
   return (
     <div className="h-screen ">
       <div className="flex justify-end  gap-8  items-center p-4 bg-gray-100">
@@ -64,6 +66,8 @@ export default function Search() {
                 Logout <FaArrowRight />
               </button>
             </div>
+            <div className="flex justify-center">
+              <span><button className="border bg-blue-500 text-xl text-white p-2 hover:bg-blue-800 rounded-xl" onClick={handleBoard}>DashBoard</button></span></div>
           </div>
         )}
       </div>

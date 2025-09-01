@@ -1,30 +1,42 @@
 @import "tailwindcss";
 
-/* 
-@theme {
-    --color-primary: #A53DFF;
-    --font-display: "Satoshi", sans-serif;
-    --text-20xl: 100rem;
-    --breakpoint-tablet: 768px;
-    --animate-changeColor: changeColorAnimation 1s infinite;
+
+@keyframes colorScaleAnimation {
+  0% {
+    color: #ffffff;
+    transform: scale(1);
+  }
+  25% {
+    color: #ff6b6b;
+    transform: scale(1.05);
+  }
+  50% {
+    color: #041a47;
+    transform: scale(1.1);
+  }
+  75% {
+    color: #6b9eff;
+    transform: scale(1.05);
+  }
+  100% {
+    color: #5f0425;
+    transform: scale(1);
+  }
 }
 
-@keyframes changeColorAnimation {
-    0% {
-        color: red;
-    }
-    50% {
-        color: blue;
-        transform: scale(2);
-    }
-    100% {
-        color: green;
-    }
-} */
+.animated-text {
+  animation: colorScaleAnimation 4s infinite;
+}
 
-/* @layer components{
-    .subscribe{
-    @apply
+@keyframes logoBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
-    }
-} */
+.animated-logo {
+  animation: logoBounce 2s infinite ease-in-out;
+}
