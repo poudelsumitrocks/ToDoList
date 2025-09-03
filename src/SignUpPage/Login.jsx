@@ -3,19 +3,57 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-export default function Sign() {
+
+export default function login() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const [lastSavedCredentials,setlastSavedCredentials]=useState()
 
-  const { register, handleSubmit } = useForm();
-  
-  const handleLogin = (data) => {
-   
-
-    localStorage.setItem("currentUser", JSON.stringify(userFound));
-      toast.success(" Successfully Logged In!");
-      navigate("/dashborad");
+   const handleSign =()=>{
+      navigate("/sign",{replace:"true"})
     }
+  function handleRemember(){
+    const res=localStorage.getItem('lastSavedCredentials')
+    setlastSavedCredentials(JSON.parse(res))
+    console.log(lastSavedCredentials)
+  }
+  const { register, handleSubmit, setValue } = useForm();
+
+  if (lastSavedCredentials){
+     setValue("email", lastSavedCredentials.email);
+     setValue("password",lastSavedCredentials.password)
+  }
+
+  const handleLogin = (data) => {
+    // console.log("form submitted",data)
+    const userCredentials = localStorage.getItem("data");
+    const parsedUserCredentials = JSON.parse(userCredentials);
+
+    // console.log(parsedUserCredentials)
+    const { fullName,email, password } = parsedUserCredentials;
+    // console.log(email,password)
+
+    const myCredentials={
+      email:data.email,
+      password:data.password
+    }
+   
+    localStorage.setItem("lastSavedCredentials",JSON.stringify(myCredentials))
+    sessionStorage.setItem("currentUser",fullName);
+
+    function verifyUser() {
+      if (data.email == email && data.password == password) {
+        toast.success(" Successfully Logged In!");
+        navigate("/dashboard1",{state:fullName,replace:true});
+      } else {
+        toast.error("Invalid Credentials");
+      }
+    }
+
+    verifyUser()
+
+
+  };
   return (
     <div className="bg-blue-700 min-h-screen flex justify-center items-center p-4">
       <div className="bg-white w-full max-w-5xl flex flex-col md:flex-row rounded-lg shadow-lg overflow-hidden">
@@ -42,7 +80,7 @@ export default function Sign() {
 
         {/* Right */}
         <div className="flex flex-col justify-center items-center p-8 md:w-1/2 bg-white">
-          <h1 className="text-xl font-bold mb-6 text-center">Sign-In</h1>
+          <h1 className="text-xl font-bold mb-6 text-center">Login-In</h1>
 
           <form
             onSubmit={handleSubmit(handleLogin)}
@@ -77,10 +115,15 @@ export default function Sign() {
             >
               Login
             </button>
-            <div className="flex flex-row gap-6 text-md"><input type="checkbox" /> Remember me  <span className="text-blue-500  hover:border-b-1 cursor-pointer">Forgot Password</span></div>
+            <div className="flex flex-row gap-6 text-md">
+              <input onClick={handleRemember} type="checkbox"/> Remember me{""}
+              <span className="text-blue-500  hover:border-b-1 cursor-pointer">
+                Forgot Password
+              </span>
+            </div>
             <p className="mt-4 text-sm text-gray-600 flex gap-2 justify-center font-semibold">
               Don't have an account?
-              <span className="text-blue-500 cursor-pointer hover:underline">
+              <span className="text-blue-500 cursor-pointer hover:underline"onClick={handleSign}>
                 Sign Up
               </span>
             </p>

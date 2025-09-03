@@ -274,7 +274,7 @@
 //   );
 // }
 
-// Local storage 
+// Local storage
 
 // import React from 'react'
 // import LocalStorage from './pages/LocalStorage'
@@ -286,7 +286,6 @@
 //     </div>
 //   )
 // }
-
 
 // Toastfy
 
@@ -317,20 +316,20 @@
 //   )
 // }
 
-
-import React from 'react'
-import Sign from './SignUpPage/Sign'
-import Login from './SignUpPage/Login'
-import Forgotpass from './SignUpPage/Forgotpass'
-import Dashb from './SignUpPage/Dashb'
-import { ToastContainer } from 'react-toastify'
-import { BrowserRouter, Routes, Route } from 'react-router'
+import React from "react";
+import Sign from "./SignUpPage/Sign";
+import Login from "./SignUpPage/Login";
+import Forgotpass from "./SignUpPage/Forgotpass";
+import Dashb from "./SignUpPage/Dashb";
+import { ToastContainer } from "react-toastify";
+import { BrowserRouter, Routes, Route } from "react-router";
+import Dashboard1 from "./SignUpPage/Dashboard1";
 export default function App() {
   return (
     <div>
       <BrowserRouter>
-       <ToastContainer
-          position="Top-right"
+        <ToastContainer
+          position="top-right"
           autoClose={3000}
           hideProgressBar={false}
           newestOnTop={true}
@@ -339,13 +338,15 @@ export default function App() {
           draggable
           pauseOnHover
         />
-      <Routes>
-        <Route path="/" element={<Sign/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/forgotpass" element={<Forgotpass/>}/>
-        <Route path="/dashb" element={<Dashb/>}/>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/sign" element={<Sign />} />
+          <Route path="/forgotpass" element={<Forgotpass />} />
+          <Route path="/dashboard1" element={<Dashboard1 />}>
+            <Route index element={<Dashb />} />
+          </Route>
+        </Routes>
       </BrowserRouter>
     </div>
-  )
+  );
 }

@@ -11,8 +11,8 @@ export default function Sign() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   const hanldeHaveData=()=>{
-     toast.info("Already have Account !");
-     navigate("/login");
+
+     navigate("/");
   }
   const handleFacebook = () => {
     window.open("https://www.facebook.com/");
@@ -26,7 +26,7 @@ export default function Sign() {
     localStorage.setItem("data", JSON.stringify(data));
     toast.success("Congratulations! You have created your account.");
     reset();
-    navigate("/login");
+    navigate("/");
   };
 
   return (
