@@ -1,9 +1,10 @@
 import React from 'react';
-
+import { useOutletContext } from 'react-router';
 export default function Managemenu() {
+     const {name}=useOutletContext();
     return (
         <div className="max-w-sm mx-auto mt-10 p-6 bg-white rounded-lg shadow">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800">Management Menu</h2>
+            <h2 className="text-2xl font-bold mb-6 text-gray-800">Management Menu for {name}</h2>
             <ul className="space-y-4">
                 <li>
                     <button className="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700 transition">

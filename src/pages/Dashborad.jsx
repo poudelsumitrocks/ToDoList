@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet, NavLink } from 'react-router';
 export default function Dashborad() {
+ 
   function LinkClasses() {
     return "block py-3 px-5 w-full rounded-lg text-gray-700 transition-colors duration-200 hover:bg-blue-300 hover:text-white";
   }
@@ -13,16 +14,16 @@ export default function Dashborad() {
         <div className="mt-8 w-full">
           <h2 className="text-sm font-semibold text-gray-500 uppercase mb-2">Menu</h2>
           <ul className="space-y-3">
-            <NavLink to="/dashboard" className={LinkClasses}>
+            <NavLink to="/ " className={LinkClasses}>
               Dashboard
             </NavLink>
-            <NavLink to="/dashboard/foodmenu" className={LinkClasses}>
+            <NavLink to="/foodmenu" className={LinkClasses}>
               Food Order
             </NavLink>
-            <NavLink to="/dashboard/managemenu" className={LinkClasses}>
+            <NavLink to="/managemenu" className={LinkClasses}>
               Manage Menu
             </NavLink>
-            <NavLink to="/dashboard/customermenu" className={LinkClasses}>
+            <NavLink to="/customermenu" className={LinkClasses}>
               Customer Menu
             </NavLink>
           </ul>
@@ -30,7 +31,7 @@ export default function Dashborad() {
       </div>
 
       <div className='col-span-10'>
-        <Outlet />
+       <Outlet context={{ name: "Sumit Poudel" }}/> 
       </div>
     </div>
   );

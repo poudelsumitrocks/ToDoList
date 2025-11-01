@@ -5,7 +5,7 @@ export default function Dashboard1() {
     return "block py-3 px-5 w-full rounded-lg text-gray-700 transition-colors duration-200 hover:bg-blue-300 hover:text-white";
   }
   return (
-    <div div className='grid grid-cols-12 min-h-screen'>
+    <div  className='grid grid-cols-12 min-h-screen'>
 
       <div className='col-span-2 bg-blue-50 px-10 py-3'>
         <div className='bg-blue-900 h-14 w-14 text-white rounded-full text-xl flex justify-center items-center'> G </div>
